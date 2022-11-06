@@ -231,9 +231,6 @@ Configuring an ADC and the input values are displayed on LCD screen.
 
 
 
-Result :
-Configuring an ADC and the input values are displayed on LCD screen 
-
 
 
 
