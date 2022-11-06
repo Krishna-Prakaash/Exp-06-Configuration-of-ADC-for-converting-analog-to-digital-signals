@@ -205,11 +205,11 @@ int main()
 ```
 # Output screen shots :
 ## Display Off:
-![OUTPUT-01](IMG-01.PNG)
+![OUTPUT-01](IMG-01.png)
 ## Display On:
-![OUTPUT-02](IMG-02.PNG)
+![OUTPUT-02](IMG-02.png)
 ## Layout Diagram:
-![OUTPUT-03](IMG-03.PNG)
+![OUTPUT-03](IMG-03.png)
 ## Tabulations and graph:
 ![OUTPUT-04](IMG-04.PNG)
 
