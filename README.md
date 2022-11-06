@@ -1,13 +1,15 @@
 # Exp-06-Configuration-of-ADC-for-converting-analog-to-digital-signals
 
 
-## Name :	
-## Roll no:
-## Date of experiment : 
+## Name :	KRISHNA PRAKAASH D M
+## Roll no:212221230052 
+## Date of experiment : 5/11/22
   
   
-## Aim: To configure internal ADC for   LPC2148 ARM 7 and write a code for displaying the values varying from 0v to 3.3v to its equivalent digital values 
-## Components required: Proteus ISIS professional suite, Kiel μ vision 5 Development environment 
+## Aim: 
+To configure internal ADC for   LPC2148 ARM 7 and write a code for displaying the values varying from 0v to 3.3v to its equivalent digital values 
+## Components required:
+Proteus ISIS professional suite, Kiel μ vision 5 Development environment 
  
  ![image](https://user-images.githubusercontent.com/36288975/198947663-2d75f694-880a-4bc0-be67-8c2d4125fdb6.png)
 
@@ -175,34 +177,64 @@ ADxDRy. E.g. AD0DR1 contains ADC result of channel 1 of ADC0.
  ![image](https://user-images.githubusercontent.com/36288975/198947241-e5190f5c-0a23-4026-ae2c-722c43e51e6c.png)
 
 Figure -08 Circuit diagram of interfacing an POT with ADC input pin 
-
-## Kiel - Program 
- 
-## Tabulations and graph 
-SL NO	% OF POT VALUE	ADC VALUE
-1		
-2		
-3		
-4		
-5		
-6		
-7		
-8		
-9		
-10		
-
  ![image](https://user-images.githubusercontent.com/36288975/198947184-dbccf4b1-10a1-4090-a670-93526ed6e597.png)
 
 
+## Kiel - Program 
+ ```
+ #include<lpc214x.h>
+#include "LCD.h"
+#include "ADC.h"
+int main()
+{
+	IO1DIR=0xffffffff;
+	IO0DIR=0x00000000;
+	PINSEL0=0x0300;
+	VPBDIV=0x02;
+	lcd_init();
+	show(" ADC Value: ");
+	while(1){
+		cmd(0x8b);
+		val=adc(0,6);
+		dat((val/1000)+48);
+		dat(((val/100)%10)+48);
+		dat(((val/10)%10)+48);
+		dat((val%10)+48);
+	}
+}
+```
+# Output screen shots :
+## Display Off:
+![OUTPUT-01](IMG-01.PNG)
+## Display On:
+![OUTPUT-02](IMG-02.PNG)
+## Layout Diagram:
+![OUTPUT-03](IMG-03.PNG)
+## Tabulations and graph:
+![OUTPUT-04](IMG-04.PNG)
+
+
+## Graph between % of pot(1 Kohm) values and ADC:
+![OUTPUT-05](IMG-05.PNG)
+
+# Result :
+Configuring an ADC and the input values are displayed on LCD screen.
+
+
+
+
+
+
+
 
  
-Figure -09 graph between % of pot(1Kohm) values and ADC 
+
 
 
 Result :
 Configuring an ADC and the input values are displayed on LCD screen 
 
-Output screen shots :
+
 
 
 
